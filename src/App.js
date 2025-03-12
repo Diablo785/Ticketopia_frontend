@@ -147,7 +147,7 @@ function AppLayout() {
 function App() {
   return (
     <MantineProvider>
-      <Router">
+      <Router>
         <Notifications /> 
         <CartProvider>
           <UserProvider>
