@@ -1,0 +1,151 @@
+/* Ensures the burger button shows for 768px and below */
+.burgerMenuButton {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .burgerMenuButton {
+    display: block;
+  }
+}
+
+.header {
+  padding-top: var(--mantine-spacing-sm);
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  border-bottom: 1px solid light-dark(var(--mantine-color-gray-2), transparent);
+  margin-bottom: 5px;
+}
+
+.mainSection {
+  padding-bottom: var(--mantine-spacing-sm);
+}
+
+.websiteName {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0));
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.user {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0));
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-sm);
+  transition: background-color 100ms ease;
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    display: none;
+  }
+}
+
+.userActive {
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+}
+
+.tabsList {
+  &::before {
+    display: none;
+  }
+}
+
+.tab {
+  font-weight: 500;
+  height: 38px;
+  background-color: transparent;
+  position: relative;
+  bottom: -1px;
+
+  &::before,
+  &::after {
+    background-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-7)) !important;
+  }
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+  }
+
+  &[data-active] {
+    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+    border-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-7));
+    border-bottom-color: transparent;
+  }
+}
+
+.tabsAndSearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.tabsAndSearch .search {
+  width: 100%;
+  max-width: 280px; /* Optional: max-width for larger screens */
+}
+
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Added more spacing between items */
+  padding: 20px; /* Padding for a bit more space inside */
+  background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-8));
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.burgerMenu .search {
+  width: 80%; /* Give the search bar some width, it will adjust accordingly */
+  max-width: 350px; /* Optional: Set a maximum width for the search bar */
+  margin: 0 auto; /* Center the search bar horizontally */
+}
+
+.burgerMenu .closeBurger {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userMenuWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.cartIcon {
+  margin-right: 10px; /* Adjust spacing between the cart icon and the button */
+  cursor: pointer;  /* Makes the cart icon clickable */
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.mobileMenu .search {
+  width: 80%;
+  max-width: 350px; /* Limit search bar width */
+  margin: 0 auto; /* Center it horizontally */
+}
+
+@media (max-width: 767px) {
+  .tabsAndSearch {
+    justify-content: center; /* Center align the content */
+  }
+}
+
+@media (max-width: 377px) {
+  .websiteName {
+    font-size: 1.3rem; /* Make it slightly smaller on mobile */
+  }
+  
+  .userMenuWrapper {
+    gap: 4px; /* Further reduce spacing on mobile */
+  }
+}
