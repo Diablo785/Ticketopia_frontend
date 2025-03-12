@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem("auth_token");
-      const response = await fetch("http://127.0.0.1:8000/api/user", {
+      const response = await fetch("https://ticketopia-backend-main-dc9cem.laravel.cloud/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

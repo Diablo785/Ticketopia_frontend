@@ -50,7 +50,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem('auth_token');
-      const response = await fetch('https://www.ticketopia.store/api/logout', {
+      const response = await fetch('https://ticketopia-backend-main-dc9cem.laravel.cloud/api/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

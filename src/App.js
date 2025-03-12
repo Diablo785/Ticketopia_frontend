@@ -118,7 +118,7 @@ function AppLayout() {
       if (token) {
         try {
           const response = await fetchWithAuth(
-            "https://www.ticketopia.store/api/user",
+            "https://ticketopia-backend-main-dc9cem.laravel.cloud/api/user",
           );
           if (response.ok) {
             const userData = await response.json();
@@ -147,7 +147,7 @@ function AppLayout() {
 function App() {
   return (
     <MantineProvider>
-      <Router basename="/react">
+      <Router">
         <Notifications /> 
         <CartProvider>
           <UserProvider>

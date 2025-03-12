@@ -51,7 +51,7 @@ export const AuthPage = () => {
     const token = localStorage.getItem("auth_token");
     if (!token) return;
 
-    const profileResponse = await fetch("https://www.ticketopia.store/api/user", {
+    const profileResponse = await fetch("https://ticketopia-backend-main-dc9cem.laravel.cloud/api/user", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export const AuthPage = () => {
     };
 
     try {
-      const response = await fetch(`https://www.ticketopia.store/api/${endpoint}`, {
+      const response = await fetch(`https://ticketopia-backend-main-dc9cem.laravel.cloud/api/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ export const AuthPage = () => {
 
       if (type === 'register') {
         // After successful registration, log the user in automatically if terms are accepted
-        const loginResponse = await fetch("https://www.ticketopia.store/api/login", {
+        const loginResponse = await fetch("https://ticketopia-backend-main-dc9cem.laravel.cloud/api/login", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

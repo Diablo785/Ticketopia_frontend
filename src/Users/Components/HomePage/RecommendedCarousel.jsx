@@ -5,17 +5,16 @@ import EventCard from "../Event/EventCard";
 const RecommendedCarousel = ({ carouselId }) => {
   const { initializeCarousel, carousels } = useCarousel();
   const cardRef = useRef(null);
-  const [events, setEvents] = useState([]); // Internal state for fetched events
+  const [events, setEvents] = useState([]);
   const [cardsToShow, setCardsToShow] = useState(5);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch events specific to RecommendedCarousel
     const fetchRecommendedEvents = async () => {
       try {
         setLoading(true);
-          const response = await fetch("https://www.ticketopia.store/api/events");
+          const response = await fetch("https://ticketopia-backend-main-dc9cem.laravel.cloud/api/events");
           
           console.log('API Response Status:', response.status);
           
@@ -23,7 +22,6 @@ const RecommendedCarousel = ({ carouselId }) => {
             throw new Error(`Error fetching events: ${response.status} ${response.statusText}`);
           }
           
-          // Only parse the response once
           const data = await response.json();
           console.log('API Response Data:', data);
           setEvents(data);

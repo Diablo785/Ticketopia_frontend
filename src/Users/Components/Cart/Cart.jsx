@@ -33,7 +33,7 @@ const Cart = ({ cartButtonRef }) => {
     }));
 
     try {
-      const response = await fetch('https://www.ticketopia.store/api/create-checkout-session', {
+      const response = await fetch('https://ticketopia-backend-main-dc9cem.laravel.cloud/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
